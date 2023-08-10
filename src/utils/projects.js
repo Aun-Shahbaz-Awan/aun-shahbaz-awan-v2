@@ -1,13 +1,13 @@
 import Project_01 from "../assets/projects/gwaysbc.app.full.png";
-import Project_02 from "../assets/projects/songsplits.xyz.full.png";
-import Project_03 from "../assets/projects/creativewealth.finance.full.png";
-import Project_04 from "../assets/projects/utryme.full.png";
-import Project_05 from "../assets/projects/helpi-finance-exchange.netlify.app.full.png";
+import Project_02 from "../assets/projects/songsplits.xyz.png";
+import Project_03 from "../assets/projects/creativewealth.finance.png";
+import Project_04 from "../assets/projects/utryme.png";
+import Project_05 from "../assets/projects/helpi-finance-exchange.netlify.app.png";
 import Project_06 from "../assets/projects/omibio.netlify.app.full.png";
 import Project_07 from "../assets/projects/rebel-rhinos.netlify.app.png";
 import Project_08 from "../assets/projects/boomerang-capital.netlify.app.png";
 import Project_09 from "../assets/projects/metasaviors-clone.netlify.app.png";
-import Project_10 from "../assets/projects/rgb-marketplace.netlify.app.full.png";
+import Project_10 from "../assets/projects/rgb-marketplace.netlify.app.png";
 
 export const projects = [
   {

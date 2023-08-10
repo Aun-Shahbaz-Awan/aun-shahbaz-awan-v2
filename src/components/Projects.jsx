@@ -1,198 +1,242 @@
 import React, { useState } from "react";
 import { FiLink } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
-import { CgArrowLeft, CgArrowRight } from "react-icons/cg";
+import { LiaChevronLeftSolid, LiaChevronRightSolid } from "react-icons/lia";
 import { projects } from "../utils/projects";
+import AnimOne from "../assets/animations/lines-1.svg";
+import AnimTwo from "../assets/animations/lines-2.svg";
+import "../styles/custom.css";
 
 function Projects() {
   const [mainProjectIndex, setMainProjectIndex] = useState(0);
 
   return (
-    <div className="px-20 my-40">
-      <div className="text-center mb-20">
-        <h5 className="text-5xl font-bold font-poppins">Blockchain Projects</h5>
+    <div className="my-40 relative">
+      <img
+        src={AnimOne}
+        alt="anim"
+        className="absolute w-5/12 right-10 top-20 -z-10"
+      />
+      <div className="text-center mb-20 px-20">
+        <h5 className="text-2xl md:text-5xl text-white font-bold font-poppins py-2">
+          Blockchain Projects
+        </h5>
         <p className="text-lg font-medium leading-10">I have Done!</p>
       </div>
       {/* CARDS ----------------------------------------------------------------- */}
-      <div className="flex justify-center text-dark overflow-hidden flip-wrapper">
-        {/* Previous ------------------------------------------------------------ */}
-        <div className="flip-left -mr-40">
-          <div
-            onClick={() => {
-              if (mainProjectIndex - 1 === -1)
-                setMainProjectIndex(projects.length - 1);
-              else setMainProjectIndex(mainProjectIndex - 1);
-            }}
-            className="bg-[#DDFAEE] rounded-xl p-7 shadow-xl z-10 scale-75 opacity-50 cursor-pointer"
-          >
-            <div
-              style={{
-                backgroundImage: `url(${
-                  mainProjectIndex - 1 === -1
-                    ? projects[projects.length - 1].image
-                    : projects[mainProjectIndex - 1].image
-                })`,
-              }}
-              className=" w-auto h-80 sm:w-[584px] sm:h-[484px] bg-cover rounded-xl shadow-lg"
-            />
-            <h4 className="leading-8 mt-5 text-xl font-semibold ml-1">
-              {mainProjectIndex - 1 === -1
-                ? projects[projects.length - 1].title
-                : projects[mainProjectIndex - 1].title}
-            </h4>
-            <p className="ml-1">
-              {mainProjectIndex - 1 === -1
-                ? projects[projects.length - 1].description
-                : projects[mainProjectIndex - 1].description}
-            </p>
-            <div className="flex items-center justify-between mt-5">
-              <div
-                onClick={() => window.open("https://gwaysbc.app/", "_blank")}
-                className="w-8/12 bg-dark text-white flex items-center justify-between shadow-lg shadow-slate-500 px-3 py-2 rounded-md cursor-pointer"
-              >
-                <a
-                  href={
-                    mainProjectIndex - 1 === -1
-                      ? projects[projects.length - 1].url
-                      : projects[mainProjectIndex - 1].url
-                  }
-                  _blank
-                  className=" underline"
-                >
-                  {mainProjectIndex - 1 === -1
-                    ? projects[projects.length - 1].url
-                    : projects[mainProjectIndex - 1].url}
-                </a>
-                <FiLink className="" />
-              </div>
-              <div className="flex justify-between items-center my-auto cursor-pointer">
-                <AiFillGithub className=" mr-1" />
-                <p className=" text-sm font-medium mr-1">Source Code</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Main ---------------------------------------------------------------- */}
-        <div className="bg-[#DDFAEE] rounded-xl p-7 shadow-xl z-40">
-          <div
-            style={{
-              backgroundImage: `url(${projects[mainProjectIndex].image})`,
-            }}
-            className=" w-auto h-80 sm:w-[584px] sm:h-[484px] bg-cover rounded-xl shadow-lg"
-          />
-          <h4 className="leading-8 mt-5 text-xl font-semibold ml-1">
-            {projects[mainProjectIndex].title}
-          </h4>
-          <p className="ml-1">{projects[mainProjectIndex].description}</p>
-          <div className="flex items-center justify-between mt-5">
-            <div
-              onClick={() => window.open("https://gwaysbc.app/", "_blank")}
-              className="w-8/12 bg-dark text-white flex items-center justify-between shadow-lg shadow-slate-500 px-3 py-2 rounded-md cursor-pointer"
-            >
-              <a
-                href={projects[mainProjectIndex].url}
-                _blank
-                className=" underline"
-              >
-                {projects[mainProjectIndex].url}
-              </a>
-              <FiLink className="" />
-            </div>
-            <div
-              onClick={() =>
-                window.open(`${projects[mainProjectIndex].source}`, "_blank")
-              }
-              className="flex justify-between items-center my-auto cursor-pointer"
-            >
-              <AiFillGithub className=" mr-1" />
-              <p className=" text-sm font-medium mr-1">Source Code</p>
-            </div>
-          </div>
-        </div>
-        {/* Next ---------------------------------------------------------------- */}
-        <div className="flip-right -ml-40">
-          <div
-            onClick={() => {
-              if (mainProjectIndex + 1 === projects.length)
-                setMainProjectIndex(0);
-              else setMainProjectIndex(mainProjectIndex + 1);
-            }}
-            className="bg-[#DDFAEE] rounded-xl p-7 shadow-xl z-10 scale-75 opacity-50 cursor-pointer"
-          >
-            <div
-              style={{
-                backgroundImage: `url(${
-                  mainProjectIndex + 1 === projects.length
-                    ? projects[0].image
-                    : projects[mainProjectIndex + 1].image
-                })`,
-              }}
-              className=" w-auto h-80 sm:w-[584px] sm:h-[484px] bg-cover rounded-xl shadow-lg"
-            />
-            <h4 className="leading-8 mt-5 text-xl font-semibold ml-1">
-              {mainProjectIndex + 1 === projects.length
-                ? projects[0].title
-                : projects[mainProjectIndex + 1].title}
-            </h4>
-            <p className="ml-1">
-              {mainProjectIndex + 1 === projects.length
-                ? projects[0].description
-                : projects[mainProjectIndex + 1].description}
-            </p>
-            <div className="flex items-center justify-between mt-5">
-              <div
-                onClick={() => window.open("https://gwaysbc.app/", "_blank")}
-                className="w-8/12 bg-dark text-white flex items-center justify-between shadow-lg shadow-slate-500 px-3 py-2 rounded-md cursor-pointer"
-              >
-                <a
-                  href={
-                    mainProjectIndex + 1 === projects.length
-                      ? projects[0].url
-                      : projects[mainProjectIndex + 1].url
-                  }
-                  _blank
-                  className=" underline"
-                >
-                  {mainProjectIndex + 1 === projects.length
-                    ? projects[0].url
-                    : projects[mainProjectIndex + 1].url}
-                </a>
-                <FiLink className="" />
-              </div>
-              <div className="flex justify-between items-center my-auto cursor-pointer">
-                <AiFillGithub className=" mr-1" />
-                <p className=" text-sm font-medium mr-1">Source Code</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Arrow */}
-      <div className="relative flex justify-center mt-5 z-50 sm:hidden">
+      <div className="flex items-center justify-between">
         <div
           onClick={() => {
-            if (mainProjectIndex - 1 === -1)
-              setMainProjectIndex(projects.length - 1);
+            if (mainProjectIndex - 4 < 0)
+              setMainProjectIndex(projects.length - 4);
             else setMainProjectIndex(mainProjectIndex - 1);
           }}
-          className="absolute flex items-center cursor-pointer py-1 rounded-full mr-32"
+          className="w-12 h-28 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-r-xl border-y border-r border-white/60 cursor-pointer"
         >
-          <CgArrowLeft className="text-3xl text-gray " />
-          Prev
+          <LiaChevronLeftSolid className="text-4xl text-white" />
+        </div>
+        <div className="hidden lg:grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-10 text-dark overflow-hidden flip-wrapper px-10">
+          {/* 1st ----------------------------------------------------------------- */}
+          {projects
+            .slice(mainProjectIndex, mainProjectIndex + 4)
+            .map((project) => (
+              <div className="bg-gray bg-opacity-40 backdrop-blur-md border border-gray/40 rounded-lg shadow-xl col-span-3 z-40">
+                <div className="h-10 border-b border-black flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="bg-red-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.8rem]" />
+                    <div className="bg-yellow-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                    <div className="bg-green-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                  </div>
+                  <div className="text-xs rounded-full mr-[0.5rem]">
+                    <div
+                      onClick={() => window.open(`${project.source}`, "_blank")}
+                      className="flex justify-between items-center my-auto cursor-pointer hover:bg-black hover:text-gray hover:mt-1 hover:mr-1 rounded-full px-1 py-0.5 group"
+                    >
+                      <AiFillGithub className="group-hover:mr-1 text-xl  group-hover:text-lg" />
+                      <p className="mr-1 text-xs hidden group-hover:block group-hover:text-white ">
+                        Source Code
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-3">
+                  <div
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                    }}
+                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                  />
+                  <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
+                    {project.title}
+                  </h4>
+                  <p className="ml-1 text-xs text-white">
+                    {project.description}
+                    {/* {project.description.length > 40
+                      ? project.description.slice(0, 40).concat("...")
+                      : project.description} */}
+                  </p>
+                  <div className="flex items-center justify-between text-xs mt-2">
+                    <div
+                      onClick={() => window.open(project.url, "_blank")}
+                      className="w-full bg-dark text-white flex items-center justify-between shadow-lg px-3 py-2 rounded-lg cursor-pointer"
+                    >
+                      <a href={project.url} _blank className=" underline">
+                        {project.url.length > 30
+                          ? project.url.slice(0, 30).concat("...")
+                          : project.url}
+                      </a>
+                      <FiLink className="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className="hidden md:grid lg:hidden grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-10 text-dark overflow-hidden flip-wrapper px-10">
+          {/* 1st ----------------------------------------------------------------- */}
+          {projects
+            .slice(mainProjectIndex, mainProjectIndex + 2)
+            .map((project) => (
+              <div className="bg-gray bg-opacity-40 backdrop-blur-md border border-gray/40 rounded-lg shadow-xl col-span-3 z-40">
+                <div className="h-10 border-b border-black flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="bg-red-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.8rem]" />
+                    <div className="bg-yellow-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                    <div className="bg-green-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                  </div>
+                  <div className="text-xs rounded-full mr-[0.5rem]">
+                    <div
+                      onClick={() => window.open(`${project.source}`, "_blank")}
+                      className="flex justify-between items-center my-auto cursor-pointer hover:bg-black hover:text-gray hover:mt-1 hover:mr-1 rounded-full px-1 py-0.5 group"
+                    >
+                      <AiFillGithub className="group-hover:mr-1 text-xl  group-hover:text-lg" />
+                      <p className="mr-1 text-xs hidden group-hover:block group-hover:text-white ">
+                        Source Code
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-3">
+                  <div
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                    }}
+                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                  />
+                  <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
+                    {project.title}
+                  </h4>
+                  <p className="ml-1 text-xs text-white">
+                    {project.description}
+                    {/* {project.description.length > 40
+                      ? project.description.slice(0, 40).concat("...")
+                      : project.description} */}
+                  </p>
+                  <div className="flex items-center justify-between text-xs mt-2">
+                    <div
+                      onClick={() => window.open(project.url, "_blank")}
+                      className="w-full bg-dark text-white flex items-center justify-between shadow-lg px-3 py-2 rounded-lg cursor-pointer"
+                    >
+                      <a href={project.url} _blank className=" underline">
+                        {project.url.length > 30
+                          ? project.url.slice(0, 30).concat("...")
+                          : project.url}
+                      </a>
+                      <FiLink className="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className="grid md:hidden grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-10 text-dark overflow-hidden flip-wrapper px-10">
+          {/* 1st ----------------------------------------------------------------- */}
+          {projects
+            .slice(mainProjectIndex, mainProjectIndex + 1)
+            .map((project) => (
+              <div className="bg-gray bg-opacity-40 backdrop-blur-md border border-gray/40 rounded-lg shadow-xl col-span-3 z-40">
+                <div className="h-10 border-b border-black flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="bg-red-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.8rem]" />
+                    <div className="bg-yellow-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                    <div className="bg-green-500 h-[0.8rem] w-[0.8rem] rounded-full ml-[0.6rem]" />
+                  </div>
+                  <div className="text-xs rounded-full mr-[0.5rem]">
+                    <div
+                      onClick={() => window.open(`${project.source}`, "_blank")}
+                      className="flex justify-between items-center my-auto cursor-pointer hover:bg-black hover:text-gray hover:mt-1 hover:mr-1 rounded-full px-1 py-0.5 group"
+                    >
+                      <AiFillGithub className="group-hover:mr-1 text-xl  group-hover:text-lg" />
+                      <p className="mr-1 text-xs hidden group-hover:block group-hover:text-white ">
+                        Source Code
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-3">
+                  <div
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                    }}
+                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                  />
+                  <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
+                    {project.title}
+                  </h4>
+                  <p className="ml-1 text-xs text-white">
+                    {project.description}
+                    {/* {project.description.length > 40
+                      ? project.description.slice(0, 40).concat("...")
+                      : project.description} */}
+                  </p>
+                  <div className="flex items-center justify-between text-xs mt-2">
+                    <div
+                      onClick={() => window.open(project.url, "_blank")}
+                      className="w-full bg-dark text-white flex items-center justify-between shadow-lg px-3 py-2 rounded-lg cursor-pointer"
+                    >
+                      <a href={project.url} _blank className=" underline">
+                        {project.url.length > 30
+                          ? project.url.slice(0, 30).concat("...")
+                          : project.url}
+                      </a>
+                      <FiLink className="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
         <div
           onClick={() => {
-            if (mainProjectIndex + 1 === projects.length - 1)
+            if (mainProjectIndex + 4 === projects.length)
               setMainProjectIndex(0);
             else setMainProjectIndex(mainProjectIndex + 1);
           }}
-          className=" absolute flex items-center cursor-pointer py-1 rounded-full ml-32"
+          className="w-12 h-28 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-l-xl border-y border-l border-white/60 cursor-pointer"
         >
-          {" "}
-          Next
-          <CgArrowRight className="text-3xl text-gray" />
+          <LiaChevronRightSolid className="text-4xl text-white" />
         </div>
       </div>
+
+      {/* <div
+          onClick={() => {
+            if (mainProjectIndex + 4 === projects.length)
+              setMainProjectIndex(0);
+            else setMainProjectIndex(mainProjectIndex + 1);
+          }}
+          className="w-1/12 flex items-center justify-center cursor-pointer"
+        >
+          <LiaChevronRightSolid className="text-5xl text-white" />
+        </div> */}
+
+      <img
+        src={AnimTwo}
+        alt="anim"
+        className="absolute reve w-5/12 -left-10 -bottom-10 px-20 -z-10"
+      />
     </div>
   );
 }

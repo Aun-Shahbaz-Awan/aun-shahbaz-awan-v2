@@ -3,20 +3,29 @@ import { FiLink } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
 import { CgArrowLeft, CgArrowRight } from "react-icons/cg";
 import { projects } from "../utils/projects";
+import AnimOne from "../assets/animations/lines-1.svg";
+import "../styles/custom.css";
 
 function Projects() {
   const [mainProjectIndex, setMainProjectIndex] = useState(0);
 
   return (
-    <div className="px-20 my-40">
+    <div className="px-20 my-40 relative">
+      <img
+        src={AnimOne}
+        alt="anim"
+        className="absolute w-2/4 right-0 px-20 -z-10"
+      />
       <div className="text-center mb-20">
-        <h5 className="text-5xl font-bold font-poppins">Blockchain Projects</h5>
+        <h5 className="text-2xl md:text-5xl font-bold font-poppins py-2">
+          Blockchain Projects
+        </h5>
         <p className="text-lg font-medium leading-10">I have Done!</p>
       </div>
       {/* CARDS ----------------------------------------------------------------- */}
       <div className="flex justify-center text-dark overflow-hidden flip-wrapper">
         {/* Previous ------------------------------------------------------------ */}
-        <div className="flip-left -mr-40">
+        <div className="hidden md:block flip-left -mr-40">
           <div
             onClick={() => {
               if (mainProjectIndex - 1 === -1)
@@ -110,7 +119,7 @@ function Projects() {
           </div>
         </div>
         {/* Next ---------------------------------------------------------------- */}
-        <div className="flip-right -ml-40">
+        <div className="hidden md:block flip-right -ml-40">
           <div
             onClick={() => {
               if (mainProjectIndex + 1 === projects.length)
@@ -127,7 +136,7 @@ function Projects() {
                     : projects[mainProjectIndex + 1].image
                 })`,
               }}
-              className=" w-auto h-80 sm:w-[584px] sm:h-[484px] bg-cover rounded-xl shadow-lg"
+              className=" w-auto h-80 md:w-[584px] md:h-[484px] bg-cover rounded-xl shadow-lg"
             />
             <h4 className="leading-8 mt-5 text-xl font-semibold ml-1">
               {mainProjectIndex + 1 === projects.length
@@ -168,7 +177,7 @@ function Projects() {
         </div>
       </div>
       {/* Arrow */}
-      <div className="relative flex justify-center mt-5 z-50 sm:hidden">
+      <div className="relative flex justify-center mt-5 z-50 md:hidden">
         <div
           onClick={() => {
             if (mainProjectIndex - 1 === -1)

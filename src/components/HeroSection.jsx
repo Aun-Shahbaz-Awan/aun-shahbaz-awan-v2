@@ -7,9 +7,9 @@ import "../styles/glitch.css";
 
 function HeroSection() {
   return (
-    <div className="px-9">
+    <div className="md:px-9">
       <div className="flex flex-col md:flex-row p-0 md:p-10">
-        <div className="w-full md:w-5/12 mt-6 h-auto">
+        <div className="w-full md:w-auto mt-6 h-auto px-10 md:px-0">
           <h2
             className="hero glitch layers text-3xl font-bold uppercase mb-3"
             data-text="Web3 developer"
@@ -20,14 +20,15 @@ function HeroSection() {
             </span>
           </h2>
           <p className="text-justify mb-4">
-            I am Aun Shahbaz, an experienced web developer and team lead with
-            expertise in React.js, Next.js, Solidity, Web3, and blockchain
-            integration. Demonstrated success in designing and developing
-            high-quality websites, leading development teams, and leveraging
-            emerging technologies. Committed to delivering innovative solutions
-            and driving the success of web projects. Seeking a challenging role
-            to utilize technical expertise, leadership skills, and web
-            development experience.
+            I am Aun Shahbaz, an experienced{" "}
+            <strong className=" uppercase">web3 developer </strong>
+            and team lead with expertise in React.js, Next.js, Solidity, Web3,
+            and blockchain integration. Demonstrated success in designing and
+            developing high-quality websites, leading development teams, and
+            leveraging emerging technologies. Committed to delivering innovative
+            solutions and driving the success of web projects. Seeking a
+            challenging role to utilize technical expertise, leadership skills,
+            and web development experience.
           </p>
           <div className="flex items-center text-base gap-3">
             <div className="flex items-center border rounded-full px-1 py-px">
@@ -48,7 +49,7 @@ function HeroSection() {
           <Slide01 />
           <Slide02 />
           <Slide03 />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-dark via-transparent md:to-transparent to-dark"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black via-transparent md:to-transparent to-dark"></div>
         </div>
       </div>
     </div>

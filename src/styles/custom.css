@@ -3,3 +3,144 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }
+
+/* TEXT SHADOW -------------------------------------- */
+.text-shadows {
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: -15px 5px 20px #ced0d3;
+  color: white;
+  letter-spacing: -0.05em;
+  user-select: none;
+  text-transform: uppercase;
+  font-size: 150px;
+  transition: all 0.25s ease-out;
+}
+.text-shadows:hover {
+  text-shadow: -16px 6px 15px #ced0d3;
+}
+
+.btn-shine {
+  /* position: absolute; */
+  color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 380px;
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 480px;
+  }
+}
+
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 300px;
+  }
+  60% {
+    background-position: 900px;
+  }
+  100% {
+    background-position: 1200px;
+  }
+}
+
+/* // ---------------------------------------------------------------- */
+
+.animation {
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: -3px;
+  margin-right: 1px;
+}
+
+.animation > div > div {
+  padding: 0.25rem 0.1rem;
+  height: 2.9rem;
+  margin-bottom: 2.9rem;
+  display: inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+
+.first div {
+  background-color: #20a7d8;
+}
+.second div {
+  background-color: #cd921e;
+}
+.third div {
+  background-color: #c10528;
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0;
+  }
+  10% {
+    margin-top: 0;
+  }
+  20% {
+    margin-top: -5.62rem;
+  }
+  30% {
+    margin-top: -5.62rem;
+  }
+  40% {
+    margin-top: -11.24rem;
+  }
+  60% {
+    margin-top: -11.24rem;
+  }
+  70% {
+    margin-top: -5.62rem;
+  }
+  80% {
+    margin-top: -5.62rem;
+  }
+  90% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
