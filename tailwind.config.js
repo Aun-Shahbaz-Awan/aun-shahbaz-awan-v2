@@ -7,9 +7,11 @@ module.exports = {
         parrot: "#EEF266",
         gray: "#D9D9D9",
         dark: "#262626",
+        cgreen: "#60E1A9",
       },
       fontFamily: {
         poppins: "Poppins",
+        orbi: "Orbitron",
       },
     },
   },

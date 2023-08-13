@@ -3,7 +3,7 @@ import AnimTree from "../assets/animations/lines-3.svg";
 
 function Features() {
   return (
-    <div className="w-full flex flex-col md:flex-row relative items-stretch gap-10 px-20 mb-20">
+    <div className="w-full flex flex-col md:flex-row relative items-stretch gap-10 px-10 md:px-20 mb-20">
       <div className="w-full md:w-5/12  bg-gradient-to-br from-[#F2F2F2]/90 via-[#C4C4C4]/70 to-[#9E9E9E]/60 text-dark backdrop-blur-md border border-gray/40 rounded-xl">
         <div className=" h-10 border-b border-black flex items-center justify-between">
           <div className="flex items-center">

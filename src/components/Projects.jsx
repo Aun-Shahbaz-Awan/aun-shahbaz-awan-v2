@@ -65,7 +65,7 @@ function Projects() {
                     style={{
                       backgroundImage: `url(${project.image})`,
                     }}
-                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                    className="w-auto h-80 bg-cover rounded-lg shadow-xl"
                   />
                   <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
                     {project.title}
@@ -94,7 +94,6 @@ function Projects() {
             ))}
         </div>
         <div className="hidden md:grid lg:hidden grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-10 text-dark overflow-hidden flip-wrapper px-10">
-          {/* 1st ----------------------------------------------------------------- */}
           {projects
             .slice(mainProjectIndex, mainProjectIndex + 2)
             .map((project) => (
@@ -123,7 +122,7 @@ function Projects() {
                     style={{
                       backgroundImage: `url(${project.image})`,
                     }}
-                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                    className="w-auto h-80 bg-cover rounded-lg shadow-xl"
                   />
                   <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
                     {project.title}
@@ -181,7 +180,7 @@ function Projects() {
                     style={{
                       backgroundImage: `url(${project.image})`,
                     }}
-                    className="w-auto h-80 bg-cover rounded-lg shadow-lg"
+                    className="w-auto h-80 bg-cover rounded-lg shadow-xl"
                   />
                   <h4 className="leading-8 mt-3 text-base font-semibold text-white ml-1">
                     {project.title}

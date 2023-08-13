@@ -4,6 +4,38 @@
   -webkit-text-stroke-color: white;
 }
 
+/* CARDS anim -------------------------------------- */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.flip-wrapper {
+  animation: slideIn 0.7s ease-in-out;
+}
+
+/* Card Model Design -------------------------------- */
+
+.shadows-text {
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: -2px 2px 4px #6c6e70;
+  color: white;
+  letter-spacing: -0.005em;
+  font-family: "Anton", Arial, sans-serif;
+  user-select: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease-out;
+}
+.shadows-text:hover {
+  text-shadow: -3px 3px 5px #6c6e70;
+}
+
 /* TEXT SHADOW -------------------------------------- */
 .text-shadows {
   position: relative;

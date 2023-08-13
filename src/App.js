@@ -6,17 +6,24 @@ import {
 import { Web3Modal, useWeb3ModalTheme } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 // import { publicProvider } from "wagmi/providers/public";
-import { bscTestnet } from "wagmi/chains";
+import "@rainbow-me/rainbowkit/styles.css";
+import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  mainnet,
+  polygon,
+  arbitrum,
+  avalanche,
+  bsc,
+  celo,
+  zkSync,
+} from "wagmi/chains";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 
-const chains = [bscTestnet];
+const chains = [mainnet, polygon, arbitrum, avalanche, bsc, celo, zkSync];
 const projectId = "cb6c7f58fe331c255089dcb388eb06db";
 
-const { publicClient } = configureChains(
-  [bscTestnet],
-  [w3mProvider({ projectId })]
-);
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 
 const wagmiConfig = createConfig({
   autoConnect: true,
@@ -41,11 +48,22 @@ function App() {
   return (
     <div>
       <WagmiConfig config={wagmiConfig}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
+        <RainbowKitProvider chains={chains}>
+          {" "}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </RainbowKitProvider>
       </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      <Web3Modal
+        projectId={projectId}
+        ethereumClient={ethereumClient}
+        themeVariables={{
+          "--w3m-font-family": "poppins, sans-serif",
+          "--w3m-accent-color": "#60E1A9",
+          "--w3m-accent-fill-color": "#000000",
+        }}
+      />
     </div>
   );
 }
